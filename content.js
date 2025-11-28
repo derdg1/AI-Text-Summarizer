@@ -154,7 +154,7 @@ async function generateSummary(text, apiKey, tone = 'neutral') {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "o4-mini", // Geändert von "gpt-3.5-turbo" zu "o4-mini"
+        model: "gpt-4o-mini", // Korrigiert: gpt-4o-mini ist das korrekte OpenAI Modell
         messages: [
           {
             role: "system",

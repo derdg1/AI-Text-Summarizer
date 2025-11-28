@@ -46,7 +46,7 @@ Um diese Extension zu nutzen, benötigst du einen API-Schlüssel von OpenAI:
 
 Diese Extension nutzt:
 - Chrome Extension Manifest V3
-- OpenAI Chat Completions API mit dem o4-mini Modell
+- OpenAI Chat Completions API mit dem gpt-4o-mini Modell
 - Content Scripts für die Interaktion mit Webseiten
 - Chrome Storage API zur sicheren Speicherung des API-Schlüssels
 
