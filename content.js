@@ -165,7 +165,7 @@ async function generateSummary(text, apiKey, tone = 'neutral') {
             content: `Fasse den folgenden Text zusammen: ${text}`
           }
         ],
-        max_tokens: 500,
+        max_completion_tokens: 500,
         temperature: 0.5
       })
     });
