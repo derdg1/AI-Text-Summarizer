@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
+  <meta charset="UTF-8">
   <title>Text-Zusammenfasser Pro</title>
   <style>
     body {
@@ -10,18 +11,77 @@
       color: #333;
       margin: 0;
     }
-    
+
     h2 {
       margin-top: 0;
       font-size: 18px;
       color: #4285f4;
       margin-bottom: 12px;
     }
-    
+
     .section {
       margin-bottom: 16px;
     }
-    
+
+    .article-section {
+      background: linear-gradient(135deg, #34a853, #0d652d);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .article-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .shortcut-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .article-status {
+      background: rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .article-button {
+      background: white;
+      color: #34a853;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 500;
+    }
+
+    .article-button:hover {
+      background: #f0f0f0;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
     .instruction {
       background-color: #f5f5f5;
       border-left: 4px solid #4285f4;
@@ -30,16 +90,16 @@
       font-size: 14px;
       line-height: 1.5;
     }
-    
+
     ol {
       padding-left: 20px;
       margin: 8px 0;
     }
-    
+
     li {
       margin-bottom: 8px;
     }
-    
+
     .footer {
       font-size: 12px;
       color: #666;
@@ -47,7 +107,7 @@
       padding-top: 12px;
       margin-top: 16px;
     }
-    
+
     button {
       background: #4285f4;
       color: white;
@@ -61,16 +121,16 @@
       width: 100%;
       margin-top: 12px;
     }
-    
+
     button:hover {
       background: #3367d6;
     }
-    
+
     #last-summary {
       margin-top: 16px;
       display: none;
     }
-    
+
     #summary-content {
       background: #f0f7ff;
       border: 1px solid #d0e3ff;
@@ -85,28 +145,39 @@
 </head>
 <body>
   <h2>Text-Zusammenfasser Pro</h2>
-  
+
+  <div class="article-section">
+    <div class="article-header">
+      <span class="article-title">Artikel zusammenfassen</span>
+      <span class="shortcut-badge">Alt+S</span>
+    </div>
+    <div class="article-status" id="article-status">
+      ✓ Artikel erkannt (~0 Wörter)
+    </div>
+    <button class="article-button" id="summarize-article">Artikel auf dieser Seite zusammenfassen</button>
+  </div>
+
   <div class="section">
+    <div class="section-title">Manuelle Zusammenfassung</div>
     <div class="instruction">
       <ol>
-        <li>Markiere einen Text auf einer beliebigen Webseite</li>
-        <li>Klicke mit der rechten Maustaste und wähle "Text zusammenfassen"</li>
-        <li>Die Zusammenfassung erscheint in einer Seitenleiste</li>
-        <li>Nutze den Export-Button für Markdown</li>
+        <li>Markiere Text auf einer Webseite</li>
+        <li>Rechtsklick → "Text zusammenfassen"</li>
+        <li>Wähle Tonalität in der Seitenleiste</li>
       </ol>
     </div>
   </div>
-  
+
   <div id="last-summary" class="section">
     <h3>Letzte Zusammenfassung:</h3>
     <div id="summary-content"></div>
     <button id="export-button">Als Markdown exportieren</button>
   </div>
-  
+
   <div class="footer">
     Text-Zusammenfasser Pro v1.1
   </div>
-  
+
   <script src="Popup.js"></script>
 </body>
 </html>
