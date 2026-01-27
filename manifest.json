@@ -1,16 +1,16 @@
 {
   "manifest_version": 3,
   "name": "AI Text Summarizer",
-  "version": "1.2",
-  "description": "Fasst markierten Text mit OpenAI's GPT-Technologie zusammen. Anpassbare Tonalitäten und Markdown-Export.",
+  "version": "1.3",
+  "description": "Fasst markierten Text oder ganze Artikel mit OpenAI's GPT-Technologie zusammen. Automatische Artikelerkennung, anpassbare Tonalitäten und Markdown-Export.",
   "permissions": [
     "activeTab",
-  "contextMenus",
-  "storage",
-  "scripting"
+    "contextMenus",
+    "storage",
+    "scripting"
   ],
   "host_permissions": [
-  "<all_urls>"
+    "<all_urls>"
   ],
   "action": {
     "default_icon": {
@@ -33,5 +33,14 @@
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
+  },
+  "commands": {
+    "summarize-article": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Artikel auf der aktuellen Seite zusammenfassen"
+    }
   }
 }
